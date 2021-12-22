@@ -24,6 +24,7 @@ class _TeleDartPageState extends State<TeleDartPage> {
     final event = Event((await telegram.getMe()).username!);
     teledart = TeleDart(telegram, event);
     teledart.start();
+    teledart.setWebhook();
     teledart.onMessage().listen((event) {
       teledart.replyMessage(event, "Salom namuna");
       print(event.text);
