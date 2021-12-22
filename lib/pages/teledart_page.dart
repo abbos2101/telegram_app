@@ -40,7 +40,10 @@ class _TeleDartPageState extends State<TeleDartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Teledart")),
+      appBar: AppBar(
+        backgroundColor: Colors.redAccent,
+        title: const Text("Teledart"),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           Message event = Message(
