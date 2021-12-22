@@ -20,10 +20,14 @@ class _TeleDartPageState extends State<TeleDartPage> {
   }
 
   void loadData() async {
-    final telegram = Telegram("1139237420:AAGxE6lYgLwLKPODCSEsXa8KN3W5TFvZhvs");
+    final telegram = Telegram("5062640514:AAHi3pu1rLmU2Xth0KvlBk50c-swObaEeDs");
     final event = Event((await telegram.getMe()).username!);
     teledart = TeleDart(telegram, event);
     teledart.start();
+    teledart.onMessage().listen((event) {
+      teledart.replyMessage(event, "Salom namuna");
+      print(event.text);
+    });
   }
 
   @override
